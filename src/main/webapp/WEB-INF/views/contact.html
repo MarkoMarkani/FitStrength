@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="Sat, 01 Dec 2001 00:00:00 GMT">
+
+<title>Workout Manager | Home</title>
+
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--[if lt IE 9]>
+		<script src="static/js/html5shiv.min.js"></script>
+		<script src="static/js/respond.min.js"></script>
+	<![endif]-->
+
+
+</head>
+<body>
+<body background="../static/css/slika14.jpg">
+
+	<div role="navigation">
+		<div class="navbar navbar-inverse">
+			<a href="/" class="navbar-brand">FitStrength</a>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav" style="font-size: 1.3em">
+					<li><a href="new-workout">New workout</a></li>
+					<li><a href="all-workouts">All workouts</a></li>
+					<li><a href="all-trainers">Trainers</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" style="font-size: 1.3em">
+					<li><a href="contact"> Contact</a></li>
+					<li><a href="about-us"> About Us</a></li>
+					<li><a href="https://www.instagram.com"><span
+							class="fa fa-instagram" style="font-size: 22px"></span> </a></li>
+					<li><a href="https://www.facebook.com/"><span
+							class="fa fa-facebook" style="font-size: 22x"></span> </a></li>
+					<li><a href="https://www.twitter.com"><span
+							class="fa fa-twitter" style="font-size: 22px"></span> </a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container text-center"
+		style="color: white; font-size: 1.4em; font-family: Impact, Charcoal, sans-serif">
+		<h2>If you have additional questions about our facilities,
+			programs, staff or services, please contact the staff members listed
+			below</h2>
+
+		Email Contact <br>
+		
+		General inquiries: info@fitstrength.com<br> Internships:
+		internships@fitstrength.com<br> Mentorships: mentorships@fitstrength.com
+		
+		<h2>Location</h2>
+		
+		Knez Mihailova Street 36a<br>
+		Belgrade 11250<br>
+		
+		Phone: 011-928-1830<br>
+        Fax: 011-928-1562<br>
+		
+		<h2>Quick contact form</h2>
+	<p>	Fill out the form below to send us a comment directly from the website</p>
+		
+
+		<form class="form-horizontal" method="POST" action="contact-form">
+			<div class="form-group">
+				<label class="control-label col-md-3">Full Name:</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="?" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3">Email Adress:</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="?" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3">Questions/Comments:</label>
+				<div class="col-md-7">
+					<textarea class="form-control" id="exampleFormControlTextarea1"
+						rows="3"></textarea>
+				</div>
+
+			</div>
+
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" value="Submit" />
+			</div>
+
+		</form>
+
+
+	</div>
+	<script src="static/js/jquery-1.11.1.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+</body>
+</html>

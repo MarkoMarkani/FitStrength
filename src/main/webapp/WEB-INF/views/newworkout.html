@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+
+</head>
+<body>
+<body style="background-color: black;">
+	<nav th:replace="fragments :: navigation"></nav>
+
+	<div class="container" id="homeDiv"
+		style="font-size: 1.4em;font-family: Impact, Charcoal, sans-serif">
+
+		<div class="container text-center"
+			style="font-family: Impact, Charcoal, sans-serif">
+
+		<h2><span class="fa fa-pencil"></span> Book Your Workout</h2>
+		
+				
+			<hr>
+			<form class="form-horizontal" method="post"
+				th:action="@{/new-workout}" th:object="${workout}">
+				<!-- <input type="hidden" name="user" value="${workout.user}" /> -->
+				<input type="hidden" name="workoutId" value="${workout.workoutId}" />
+				
+				<div class="form-group">
+					<label class="control-label col-md-3" th:for="program">Program</label>
+					<div class="col-md-7">
+						<select class="form-control" name="program">
+							<option th:each="program : ${programs}" th:text="${program}"
+								th:value="${program}"></option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+
+					<label class="control-label col-md-3" th:for="trainer">Trainer</label>
+
+					<div class="col-md-7">
+						<select class="form-control" name="trainerId">
+							<option th:each="trainer : ${trainers}" th:text="${trainer.name}"
+								th:value="${trainer.trainerId}"></option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3" th:for="description">Description</label>
+					<div class="col-md-7">
+						<input class="form-control" th:field="*{description}" /> <span
+							th:errors="*{description}" class="error"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3" th:for="duration">Duration
+						[minutes]</label>
+					<div class="col-md-7">
+						<input class="form-control" th:field="*{duration}" type="number"
+							min="1" max="200" /> <span th:errors="*{duration}" class="error"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-md-3" th:for="date">Workout Date and Time</label>
+					<div class="col-md-7">
+						<input class="form-control" th:field="*{workoutDate}" type="datetime-local" />
+						<span th:errors="*{workoutDate}" class="error"></span>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn btn-primary" value="Save" />
+				</div>
+			</form>
+
+            <br />
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+<!-- 		<h2>		<i class="fa fa-calculator margin-right-10"></i> Check Your Stats </h2> -->
+			
+<!-- 			<br /> -->
+
+<!-- 			<h3> -->
+<!-- 				BMI<i class="fa fa-info-circle BMIinfo"></i> -->
+<!-- 			</h3> -->
+<!-- 			<div class="container text-center"> -->
+<!-- 				<strong>BMI (Body Mass Index)</strong> is used as a screening tool -->
+<!-- 				to indicate if person is underweight, overweight, obese or a healthy -->
+<!-- 				weight for their height. -->
+<!-- 				<p class="infoContent"> -->
+<!-- 					From <strong>0</strong> to <strong>16</strong>: starvation<br /> From <strong>16 -->
+<!-- 						to 17</strong>: emaciation<br /> From <strong>17 to 18.5</strong>: -->
+<!-- 					underweight<br /> From <strong>18.5 to 25</strong>: correct<br /> -->
+<!-- 					From <strong>25 to 30</strong>: overweight<br /> From <strong>30 -->
+<!-- 						to 35</strong>: Level I obesity<br /> From <strong>35 to 40</strong>:  -->
+<!-- 					Level II obesity<br /> Above <strong>40</strong>: Level III obesity -->
+<!-- 				</p> -->
+<!-- 			</div> -->
+
+
+
+
+<!-- 			<hr> -->
+
+<!-- 			<form class="form-horizontal" method="post" th:action="@{/new-workout}" th:object="${userData}"> -->
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="weight">Weight [kg]</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<input class="form-control" type="number" th:field="*{weight}" min="40" max="200" -->
+<!-- 							value="70" /> <span class="error"></span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="height">Height [cm]</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<input class="form-control" type="number" th:field="*{height}" min="100" max="300" -->
+<!-- 							value="170" /> <span class="error"></span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+<!-- 				<div class="form-group"> -->
+<!-- 					<input type="submit" class="btn btn-primary" value="Check" /> -->
+<!-- 				</div> -->
+<!-- 			</form> -->
+<!-- 			<br /> -->
+
+<!-- 			<h3> -->
+<!-- 				BMR<i class="fa fa-info-circle BMRinfo"></i> -->
+<!-- 			</h3> -->
+<!-- 			<div class="container text-center"> -->
+<!-- 				<strong>BMR (Basal metabolic rate)</strong> is the total number of -->
+<!-- 				calories that your body needs to perform basic, life-sustaining -->
+<!-- 				functions. These basal functions include circulation, breathing, -->
+<!-- 				cell production, nutrient processing, protein synthesis and ion -->
+<!-- 				transport. -->
+<!-- 			</div> -->
+
+
+
+<!-- 			<hr> -->
+
+<!-- 			<form class="form-horizontal" method="post" th:action="@{/new-workout}" th:object="${userData}"> -->
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="weight">Weight [kg]</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<input class="form-control" type="number" th:field="*{weight}" min="40" max="200" -->
+<!-- 							value="70" /> <span class="error"></span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="height">Height [cm]:</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<input type="number" th:field="*{height}" min="80" max="300" value="170" -->
+<!-- 							class="form-control" /> <span class="error"></span> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="age">Age [years]:</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<input type="number" min="1" max="150" th:field="*{age}" class="form-control" -->
+<!-- 							value="25" /> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="activity">Activity:</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<select class="form-control"> -->
+<!-- 							<option value="0">very low</option> -->
+<!-- 							<option value="1">low</option> -->
+<!-- 							<option value="2" selected="selected">middle</option> -->
+<!-- 							<option value="3">high</option> -->
+<!-- 							<option value="4">very high</option> -->
+<!-- 						</select> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+
+
+
+<!-- 				<div class="form-group"> -->
+<!-- 					<label class="control-label col-md-3" th:for="gender">Gender</label> -->
+<!-- 					<div class="col-md-7"> -->
+<!-- 						<input type="radio" class="col-sm-1" name="gender" value="male" -->
+<!-- 							checked="checked" /> -->
+<!-- 						<div class="col-sm-1">Male</div> -->
+<!-- 						<input type="radio" class="col-sm-1" name="gender" value="female" /> -->
+<!-- 						<div class="col-sm-1">Female</div> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 				<div class="form-group"> -->
+<!-- 					<input type="submit" class="btn btn-primary" value="Check" /> -->
+<!-- 				</div> -->
+<!-- 			</form>  	 -->
+
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title th:text="${title}">FitStrength</title>
+
+<link href="static/css/bootstrap.min.css" rel="stylesheet">
+<link href="static/css/style.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<nav th:fragment="navigation">
+		<div class="navbar navbar-inverse">
+			<a href="/" class="navbar-brand">FitStrength</a>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav" style="font-size: 1.3em">
+					<li><a href="new-workout">New workout</a></li>
+					<li><a href="all-workouts">All workouts</a></li>
+					<li><a href="all-trainers">Trainers</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" style="font-size: 1.3em">
+					<li><a href="contact"> Contact</a></li>
+					<li><a href="about-us"> About Us</a></li>
+					<li><a href="https://www.instagram.com"><span
+							class="fa fa-instagram" style="font-size: 22px"></span> </a></li>
+					<li><a href="https://www.facebook.com/"><span
+							class="fa fa-facebook" style="font-size: 22x"></span> </a></li>
+					<li><a href="https://www.twitter.com"><span
+							class="fa fa-twitter" style="font-size: 22px"></span> </a></li>
+				</ul>
+			</div>
+		</div>
+
+	</nav>
+
+</body>
+</html>
